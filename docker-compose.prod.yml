@@ -25,9 +25,4 @@ services:
       - 3002:80
     networks:
       - advella
-  
-networks:
-  advella:
-    name: advella
-    driver: bridge
-    internal: false
+      
