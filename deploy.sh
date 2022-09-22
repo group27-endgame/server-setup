@@ -9,6 +9,11 @@ GIT_ADVELLA_BACKEND="https://github.com/group27-endgame/advella-backend.git"
 GIT_ADVELLA_FRONTEND="https://github.com/group27-endgame/advella-frontend-webapp.git"
 GIT_ADVELLA_FRONTEND_ADMIN="https://github.com/group27-endgame/advella-frontend-webapp-admin.git"
 
+# advella
+if [ -d "$BASE_DIR" ]; then
+  mkdir $BASE_DIR
+fi
+
 # backend
 if [ -d "$BACKEND_DIR" ]; then
   cd $BACKEND_DIR && git pull
@@ -30,4 +35,4 @@ else
   cd $BASE_DIR && git clone $GIT_ADVELLA_FRONTEND_ADMIN
 fi
 
-docker compose up -f $BASE_DIR/docker-compose.prod.yml -d
+cd $BASE_DIR && docker compose up -f docker-compose.prod.yml -d
