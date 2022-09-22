@@ -1,0 +1,33 @@
+version "3.9"
+services:
+  advella-backend:
+    container_name: "advella-backend"
+    build: advella-backend
+    environment:
+      - ${MSSQL_PASSWORD}
+    ports:
+      - 3000:8080
+    networks:
+      - advella
+      
+  advella-frontend-webapp:
+    container_name: "advella-frontend-webapp"
+    build: advella-frontend-webapp
+    ports:
+      - 3001:80
+    networks:
+      - advella
+      
+  advella-frontend-webapp-admin:
+    container_name: "advella-frontend-webapp-admin"
+    build: advella-frontend-webapp-admin
+    ports:
+      - 3002:80
+    networks:
+      - advella
+  
+networks:
+  advella:
+    name: advella
+    driver: bridge
+    internal: false
