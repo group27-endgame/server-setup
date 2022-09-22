@@ -1,0 +1,31 @@
+version "3.9"
+services:
+  db:
+    container_name: "mssql"
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      - SA_PASSWORD: ${MSSQL_PASSWORD}
+      - ACCEPT_EULA: "Y"
+    ports:
+      - 1443:1443
+    networks:
+      - advella
+  nginx-proxy-manager:
+    container_name: "nginx-proxy-manager"
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+      - 81:81
+    volumes:
+      - /opt/containers/nginx-proxy-manager:/data
+      - /etc/letsencrypt:/etc/letsencrypt
+    networks:
+      - advella
+  
+networks:
+  advella:
+    name: advella
+    driver: bridge
+    internal: false
