@@ -46,3 +46,23 @@ To install containers as MSSQL and nginx-proxy-manager, init script is needed to
 ```
 docker compose up -f docker-compose.init.yml -d
 ```
+
+# Directory tree
+
+```bash
+opt
+│   deploy.sh
+│   docker-compose.init.yml
+│   docker-compose.prod.yml
+│
+└───containers
+│   │   ...
+│
+└───advella
+│   └───advella-backend
+│       │   ...
+│   └───advella-frontend-webapp
+│       │   ...
+│   └───advella-frontend-webapp-admin
+│       │   ...
+```
