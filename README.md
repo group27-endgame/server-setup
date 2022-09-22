@@ -39,3 +39,10 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
+
+### Run init script
+
+To install containers as MSSQL and nginx-proxy-manager, init script is needed to be run. To do this, run this command:
+```
+docker compose up -f docker-compose.init.yml -d
+```
