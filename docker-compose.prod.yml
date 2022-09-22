@@ -5,6 +5,8 @@ services:
     build: advella-backend
     environment:
       - ${MSSQL_PASSWORD}
+    volumes:
+      - /opt/containers/advella/backend:/server
     ports:
       - 3000:8080
     networks:
@@ -13,6 +15,8 @@ services:
   advella-frontend-webapp:
     container_name: "advella-frontend-webapp"
     build: advella-frontend-webapp
+    volumes:
+      - /opt/containers/advella/frontend-webapp:/app
     ports:
       - 3001:80
     networks:
@@ -21,6 +25,8 @@ services:
   advella-frontend-webapp-admin:
     container_name: "advella-frontend-webapp-admin"
     build: advella-frontend-webapp-admin
+    volumes:
+      - /opt/containers/advella/frontend-webapp-admin:/app
     ports:
       - 3002:80
     networks:
