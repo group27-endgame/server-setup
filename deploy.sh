@@ -1,13 +1,9 @@
 #!/bin/bash
 BASE_DIR="/opt/advella"
 
-FRONTEND_WEBAPP_DIR="$BASE_DIR/advella-frontend-webapp"
-FRONTEND_WEBAPPADMIN_DIR="$BASE_DIR/advella-frontend-webapp-admin"
-BACKEND_DIR="$BASE_DIR/advella-backend"
-
-GIT_ADVELLA_BACKEND="https://github.com/group27-endgame/advella-backend.git"
-GIT_ADVELLA_FRONTEND="https://github.com/group27-endgame/advella-frontend-webapp.git"
-GIT_ADVELLA_FRONTEND_ADMIN="https://github.com/group27-endgame/advella-frontend-webapp-admin.git"
+FRONTEND_WEBAPP_DIR="advella-frontend-webapp"
+FRONTEND_WEBAPPADMIN_DIR="advella-frontend-webapp-admin"
+BACKEND_DIR="advella-backend"
 
 # advella
 if [ -d "$BASE_DIR" ]; then
@@ -15,24 +11,24 @@ if [ -d "$BASE_DIR" ]; then
 fi
 
 # backend
-if [ -d "$BACKEND_DIR" ]; then
-  cd $BACKEND_DIR && git pull
+if [ -d "$BASE_DIR/$BACKEND_DIR" ]; then
+  cd $BASE_DIR/$BACKEND_DIR && git pull
 else
-  cd $BASE_DIR && git clone $GIT_ADVELLA_BACKEND
+  cd $BASE_DIR && git clone https://github.com/group27-endgame/$BACKEND_DIR.git
 fi
 
 # frontend-webapp
-if [ -d "$BACKEND_DIR" ]; then
-  cd "$BACKEND_DIR" && git pull
+if [ -d "$BASE_DIR/$FRONTEND_WEBAPP_DIR" ]; then
+  cd $BASE_DIR/$FRONTEND_WEBAPP_DIR && git pull
 else
-  cd $BASE_DIR && git $GIT_ADVELLA_FRONTEND
+  cd $BASE_DIR && git clone https://github.com/group27-endgame/$FRONTEND_WEBAPP_DIR.git
 fi
 
 # frontend-webapp-admin
-if [ -d "$BACKEND_DIR" ]; then
-  cd "$BACKEND_DIR" && git pull
+if [ -d "$BASE_DIR/$FRONTEND_WEBAPPADMIN_DIR" ]; then
+  cd $BASE_DIR/$FRONTEND_WEBAPPADMIN_DIR && git pull
 else
-  cd $BASE_DIR && git clone $GIT_ADVELLA_FRONTEND_ADMIN
+  cd $BASE_DIR && git clone https://github.com/group27-endgame/$FRONTEND_WEBAPPADMIN_DIR.git
 fi
 
 cd $BASE_DIR && docker compose up -f docker-compose.prod.yml -d
