@@ -1,4 +1,4 @@
-# Dockarr
+# Server setup
 
 ## Installation
 
