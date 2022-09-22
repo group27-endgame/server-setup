@@ -56,7 +56,15 @@ opt
 │   docker-compose.prod.yml
 │
 └───containers
-│   │   ...
+│   └───nginx-proxy-manager
+|   |   ...
+│   └───advella
+│   │   └───advella-backend
+│   │       │   ...
+│   │   └───advella-frontend-webapp
+│   │       │   ...
+│   │   └───advella-frontend-webapp-admin
+│   │       │   ...
 │
 └───advella
 │   └───advella-backend
