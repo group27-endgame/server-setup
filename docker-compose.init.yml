@@ -5,8 +5,8 @@ services:
     container_name: "mssql"
     image: "mcr.microsoft.com/mssql/server"
     environment:
-      - SA_PASSWORD: ${MSSQL_PASSWORD}
-      - ACCEPT_EULA: "Y"
+      - SA_PASSWORD=${MSSQL_PASSWORD}
+      - ACCEPT_EULA="Y"
     ports:
       - 1443:1443
     networks:
@@ -24,7 +24,7 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
     networks:
       - advella
-  
+
 networks:
   advella:
     name: advella
