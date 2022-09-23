@@ -8,7 +8,7 @@ services:
       - SA_PASSWORD=${MSSQL_PASSWORD}
       - ACCEPT_EULA="Y"
     ports:
-      - 1443:1443
+      - 1434:1434
     networks:
       - advella_init
   nginx-proxy-manager:
