@@ -51,9 +51,9 @@ docker compose up -f docker-compose.init.yml -d
 
 ```bash
 opt
+│   .env
 │   deploy.sh
 │   docker-compose.init.yml
-│   docker-compose.prod.yml
 │
 └───containers
 │   └───nginx-proxy-manager
@@ -67,6 +67,8 @@ opt
 │   │       │   ...
 │
 └───advella
+│   │   .env
+│   │   docker-compose.prod.yml
 │   └───advella-backend
 │       │   ...
 │   └───advella-frontend-webapp
