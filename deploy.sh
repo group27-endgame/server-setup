@@ -31,5 +31,5 @@ else
   cd $BASE_DIR && git clone https://github.com/group27-endgame/$FRONTEND_WEBAPPADMIN_DIR.git
 fi
 
-cd /opt && docker compose -f docker-compose.prod.yml build
-cd /opt && docker compose up -f docker-compose.prod.yml -d
+cd $BASE_DIR && docker compose -f docker-compose.prod.yml build
+cd $BASE_DIR && docker compose-f docker-compose.prod.yml up -d
