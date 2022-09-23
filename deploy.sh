@@ -32,4 +32,4 @@ else
 fi
 
 cd $BASE_DIR && docker compose -f docker-compose.prod.yml build
-cd $BASE_DIR && docker compose-f docker-compose.prod.yml up -d
+cd $BASE_DIR && docker compose -f docker-compose.prod.yml up -d
