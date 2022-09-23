@@ -11,7 +11,7 @@ services:
     ports:
       - 3000:8080
     networks:
-      - advella
+      - advella_prod
       
   advella-frontend-webapp:
     container_name: "advella-frontend-webapp"
@@ -21,7 +21,7 @@ services:
     ports:
       - 3001:80
     networks:
-      - advella
+      - advella_prod
       
   advella-frontend-webapp-admin:
     container_name: "advella-frontend-webapp-admin"
@@ -31,5 +31,11 @@ services:
     ports:
       - 3002:80
     networks:
-      - advella
-      
+      - advella_prod
+
+networks:
+  advella_prod:
+    name: advella
+    driver: bridge
+    internal: false
+    
