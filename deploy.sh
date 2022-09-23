@@ -33,3 +33,8 @@ fi
 
 cd $BASE_DIR && docker compose -f docker-compose.prod.yml build
 cd $BASE_DIR && docker compose -f docker-compose.prod.yml up -d
+
+# cleaning of old images
+echo "y" | docker container prune 
+echo "y" | docker image prune 
+echo "y" | docker volume prune 
