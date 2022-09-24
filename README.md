@@ -55,17 +55,6 @@ opt
 │   deploy.sh
 │   docker-compose.init.yml
 │
-└───containers
-│   └───nginx-proxy-manager
-│   │   │   ...
-│   └───advella
-│   │   └───advella-backend
-│   │       │   ...
-│   │   └───advella-frontend-webapp
-│   │       │   ...
-│   │   └───advella-frontend-webapp-admin
-│   │       │   ...
-│
 └───advella
 │   │   .env
 │   │   docker-compose.prod.yml
