@@ -6,7 +6,7 @@ FRONTEND_WEBAPPADMIN_DIR="advella-frontend-webapp-admin"
 BACKEND_DIR="advella-backend"
 
 # advella
-if [ -d "$BASE_DIR" ]; then
+if ! [ -d "$BASE_DIR" ]; then
   mkdir $BASE_DIR
 fi
 
