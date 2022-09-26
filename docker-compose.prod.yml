@@ -8,6 +8,8 @@ services:
       - ${MSSQL_PASSWORD}
     ports:
       - 3000:8080
+    volumes:
+      - advella-backend:/app
     networks:
       - advella_prod
       
@@ -26,6 +28,10 @@ services:
       - 3002:80
     networks:
       - advella_prod
+      
+volumes:
+  advella-backend:
+    external: true
 
 networks:
   advella_prod:
