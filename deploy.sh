@@ -31,8 +31,6 @@ else
   cd $BASE_DIR && git clone https://github.com/group27-endgame/$FRONTEND_WEBAPPADMIN_DIR.git
 fi
 
-docker volume create advella-backend
-
 cd $BASE_DIR && docker compose -f docker-compose.prod.yml build
 cd $BASE_DIR && docker compose -f docker-compose.prod.yml up -d
 
