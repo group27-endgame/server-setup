@@ -4,6 +4,7 @@ services:
   db:
     container_name: "mssql"
     image: "mcr.microsoft.com/mssql/server"
+    restart: unless-stopped
     environment:
       - SA_PASSWORD=${MSSQL_PASSWORD}
       - ACCEPT_EULA="Y"
