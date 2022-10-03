@@ -4,6 +4,7 @@ services:
   advella-backend:
     container_name: "advella-backend"
     build: advella-backend
+    restart: unless-stopped
     environment:
       - ${MSSQL_PASSWORD}
     ports:
@@ -16,6 +17,7 @@ services:
   advella-frontend-webapp:
     container_name: "advella-frontend-webapp"
     build: advella-frontend-webapp
+    restart: unless-stopped
     ports:
       - 3001:80
     networks:
@@ -24,6 +26,7 @@ services:
   advella-frontend-webapp-admin:
     container_name: "advella-frontend-webapp-admin"
     build: advella-frontend-webapp-admin
+    restart: unless-stopped
     ports:
       - 3002:80
     networks:
