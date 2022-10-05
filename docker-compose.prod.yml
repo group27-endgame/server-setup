@@ -34,7 +34,6 @@ services:
       
 volumes:
   advella-backend:
-    external: true
 
 networks:
   advella_prod:
