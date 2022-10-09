@@ -5,11 +5,6 @@ services:
     container_name: "advella-backend"
     build: advella-backend
     restart: unless-stopped
-    environment:
-      - ${MSSQL_DB_IP}
-      - ${MSSQL_DB_NAME}
-      - ${MSSQL_DB_USERNAME}
-      - ${MSSQL_DB_PASSWORD}
     ports:
       - 3000:8080
     volumes:
