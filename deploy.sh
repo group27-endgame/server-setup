@@ -38,3 +38,4 @@ cd $BASE_DIR && docker compose -f docker-compose.prod.yml up -d
 echo "y" | docker container prune 
 echo "y" | docker image prune 
 echo "y" | docker volume prune 
+echo "y" | docker builder prune
