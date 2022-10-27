@@ -1,5 +1,10 @@
 #! bin/bash
 
+# Running as a crontab every Friday at 3am
+#
+# crontab -e
+# 0 3 * * 5 sh /opt/deploy.sh
+
 # Clean old docker files
 echo "y" | docker container prune 
 echo "y" | docker image prune 
